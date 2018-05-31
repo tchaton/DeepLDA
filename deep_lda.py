@@ -1,5 +1,5 @@
 
-
+__author__ = 'tchaton
 
 '''
 
@@ -153,7 +153,7 @@ def lda_loss(n_components, margin):
 
         Sw_t += tf.eye(dim) * r
 
-        ''' START : COMPLICATED PART WHERE TENSORFLOW AS TROUBLES'''
+        ''' START : COMPLICATED PART WHERE TENSORFLOW HAS TROUBLE'''
 
         cho = tf.cholesky(St_t + tf.eye(dim) * r)
         inv_cho = tf.matrix_inverse(cho)
@@ -161,7 +161,7 @@ def lda_loss(n_components, margin):
         #evals_t = tf.abs(tf.linalg.eigvalsh(tf.matrix_inverse(Sw_t) * Sb_t )) # INVERSED EQUATION
         top_k_evals = evals_t[-n_components:]
 
-        ''' END : COMPLICATED PART WHERE TENSORFLOW AS TROUBLES'''
+        ''' END : COMPLICATED PART WHERE TENSORFLOW HAS TROUBLE'''
 
         # index_max = tf.argmax(top_k_evals, 0)
         # thresh_max = top_k_evals[index_max] - margin
